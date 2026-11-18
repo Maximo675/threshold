@@ -30,7 +30,7 @@ function ListaDeVerificacoes({ itens }: { itens: Verificacao[] }) {
   return (
     <ul className="verificacoes">
       {itens.map((v, i) => (
-        <li key={v.id} className={`verificacao${v.ok ? '' : ' verificacao--falhou'}`}>
+        <li key={v.id} className={`verificacao${v.ok ? '' : ' verificacao--falhou'}`} data-verificacao={v.id}>
           <div className="verificacao__topo">
             <span className="verificacao__texto">
               <span className="verificacao__camada">{v.camada}</span>

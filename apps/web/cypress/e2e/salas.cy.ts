@@ -58,8 +58,15 @@ describe('Fortaleza', () => {
     cy.visit('/fortaleza');
     cy.title().should('eq', 'Fortaleza · Threshold');
     cy.get('.verificacao').should('have.length', 12);
-    cy.get('.verificacao--falhou').should('have.length', 0);
-    cy.contains('.placar', '12 de 12');
+    // O Cypress roda o site dentro de uma moldura (iframe) e, para isso, retira da resposta os cabeçalhos
+    // Content-Security-Policy e X-Frame-Options. Então, só aqui, essas duas verificações do navegador aparecem
+    // como falha. Num navegador de verdade as 12 passam, e os dois cabeçalhos são testados na API (app.test.ts).
+    const RETIRADOS_PELO_CYPRESS = ['csp', 'moldura'];
+    cy.get('.verificacao--falhou').each(($item) => {
+      expect(RETIRADOS_PELO_CYPRESS).to.include($item.attr('data-verificacao'));
+    });
+    cy.get('.verificacao--falhou').should('have.length.at.most', 2);
+    cy.contains('.placar', 'de 12');
 
     cy.contains('button', 'Usar o exemplo').click();
     cy.contains('button', 'Aplicar a tarja').click();

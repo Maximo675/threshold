@@ -118,9 +118,13 @@ describe('Fluxo da aluna', () => {
     cy.contains('button', 'Reiniciar a demonstração').should('have.focus');
   });
 
-  it('dá para navegar pelo cabeçalho só com o teclado', () => {
+  it('as abas do cabeçalho são links de verdade, que recebem o foco do teclado', () => {
     cy.visit('/dossie');
-    cy.get('nav[aria-label="Principal"] a').contains('Lantern').focus().type('{enter}');
+    // O Cypress não simula o Enter abrindo um link (o navegador faz isso sozinho com <a href>).
+    // Então o teste confere o que garante o teclado: a aba recebe foco e é um link com endereço.
+    cy.get('nav[aria-label="Principal"] a').contains('Lantern').focus();
+    cy.focused().should('have.text', 'Lantern').and('have.attr', 'href', '/lantern');
+    cy.focused().click();
     cy.location('pathname').should('eq', '/lantern');
     cy.get('nav[aria-label="Principal"] a[aria-current="page"]').should('have.text', 'Lantern');
   });
