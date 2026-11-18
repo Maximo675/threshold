@@ -1,0 +1,705 @@
+{
+  "meta": {
+    "gerado_em": "19/10/2026 16:59",
+    "alunos": {
+      "total": 40,
+      "validas": 39,
+      "sem_consentimento": 1,
+      "removidas_descricao": "1 sem consentimento"
+    },
+    "professores": {
+      "total": 8,
+      "validas": 7,
+      "sem_consentimento": 0,
+      "nunca_orientou": 1,
+      "removidas_descricao": "0 sem consentimento, 1 nunca orientaram"
+    }
+  },
+  "hipoteses": [
+    {
+      "id": "H1",
+      "nome": "ABNT é uma das maiores dores",
+      "veredito": "Confirmada",
+      "evidencia": "ABNT é a 2ª maior média da A3 (3,87 de 5); 28% escolheram ABNT como maior dificuldade na A4 (critério: top 3 OU ≥25%).",
+      "decisao": "Revisor ABNT segue como fatia funcional. Pela A5, começar por: Citações (38%), Resumo e palavras-chave (36%)."
+    },
+    {
+      "id": "H2",
+      "nome": "Aluno não sabe o próximo passo",
+      "veredito": "Confirmada",
+      "evidencia": "Média da A6 = 2,72 (critério < 3); top-2 da A12 = 64% (critério ≥ 60%).",
+      "decisao": "Roadmap sobe para funcional no nível \"se sobrar tempo\"."
+    },
+    {
+      "id": "H3",
+      "nome": "Escolha de orientador sem informação",
+      "veredito": "Não confirmada",
+      "evidencia": "Top-2 da A8 = 77% (critério < 50%).",
+      "decisao": "Reduzir o perfil a uma vitrine simples."
+    },
+    {
+      "id": "H4",
+      "nome": "IA que orienta é aceita",
+      "veredito": "Não confirmada",
+      "evidencia": "Top-2 A11 = 59%; top-2 P7 = 14% (critério: os dois ≥ 60%).",
+      "decisao": "Rever a proposta de IA com o orientador."
+    },
+    {
+      "id": "H5",
+      "nome": "Professores aceitam o perfil",
+      "veredito": "Confirmada",
+      "evidencia": "Top-2 P9 = 86% (critério ≥ 60%).",
+      "decisao": "Perfil fica. Feedback agregado ENTRA (top-2 P10 = 100%, critério ≥ 60%)."
+    },
+    {
+      "id": "H6",
+      "nome": "Segurança pesa na decisão",
+      "veredito": "Não confirmada",
+      "evidencia": "Top-2 A13 = 69%; top-2 P12 = 29% (critério: os dois ≥ 60%).",
+      "decisao": "Segurança segue igual, mas com menos destaque na apresentação."
+    }
+  ],
+  "alunos": {
+    "A1": {
+      "n": 39,
+      "contagem": {
+        "Ainda não comecei": 7,
+        "Estou escolhendo tema ou orientador": 11,
+        "Estou no meio do desenvolvimento": 9,
+        "Estou na reta final": 5,
+        "Já entreguei": 7
+      },
+      "pct": {
+        "Ainda não comecei": 0.1794871794871795,
+        "Estou escolhendo tema ou orientador": 0.28205128205128205,
+        "Estou no meio do desenvolvimento": 0.23076923076923078,
+        "Estou na reta final": 0.1282051282051282,
+        "Já entreguei": 0.1794871794871795
+      }
+    },
+    "A2": {
+      "n": 39,
+      "contagem": {
+        "Tecnologia e exatas": 5,
+        "Saúde": 7,
+        "Humanas e sociais": 9,
+        "Negócios e gestão": 7,
+        "Direito": 1,
+        "Outra": 10
+      },
+      "pct": {
+        "Tecnologia e exatas": 0.1282051282051282,
+        "Saúde": 0.1794871794871795,
+        "Humanas e sociais": 0.23076923076923078,
+        "Negócios e gestão": 0.1794871794871795,
+        "Direito": 0.02564102564102564,
+        "Outra": 0.2564102564102564
+      }
+    },
+    "A3": {
+      "linhas": {
+        "Escolher o tema": {
+          "n": 39,
+          "media": 3.076923076923077,
+          "pct_4_5": 0.3076923076923077,
+          "distribuicao": {
+            "1": 2,
+            "2": 6,
+            "3": 19,
+            "4": 11,
+            "5": 1
+          }
+        },
+        "Escolher o orientador": {
+          "n": 39,
+          "media": 3.2051282051282053,
+          "pct_4_5": 0.38461538461538464,
+          "distribuicao": {
+            "1": 1,
+            "2": 8,
+            "3": 15,
+            "4": 12,
+            "5": 3
+          }
+        },
+        "Aplicar as normas ABNT": {
+          "n": 39,
+          "media": 3.871794871794872,
+          "pct_4_5": 0.6410256410256411,
+          "distribuicao": {
+            "1": 0,
+            "2": 1,
+            "3": 13,
+            "4": 15,
+            "5": 10
+          }
+        },
+        "Saber qual é o próximo passo": {
+          "n": 39,
+          "media": 3.3846153846153846,
+          "pct_4_5": 0.4358974358974359,
+          "distribuicao": {
+            "1": 0,
+            "2": 7,
+            "3": 15,
+            "4": 12,
+            "5": 5
+          }
+        },
+        "Cumprir prazos": {
+          "n": 39,
+          "media": 3.0256410256410255,
+          "pct_4_5": 0.358974358974359,
+          "distribuicao": {
+            "1": 3,
+            "2": 11,
+            "3": 11,
+            "4": 10,
+            "5": 4
+          }
+        },
+        "Escrever o conteúdo": {
+          "n": 39,
+          "media": 3.923076923076923,
+          "pct_4_5": 0.717948717948718,
+          "distribuicao": {
+            "1": 0,
+            "2": 3,
+            "3": 8,
+            "4": 17,
+            "5": 11
+          }
+        },
+        "Conseguir tempo com o orientador": {
+          "n": 39,
+          "media": 2.923076923076923,
+          "pct_4_5": 0.23076923076923078,
+          "distribuicao": {
+            "1": 3,
+            "2": 9,
+            "3": 18,
+            "4": 6,
+            "5": 3
+          }
+        }
+      },
+      "faltando": []
+    },
+    "A4": {
+      "n": 39,
+      "contagem": {
+        "Escolher o tema": 2,
+        "Escolher o orientador": 6,
+        "Aplicar as normas ABNT": 11,
+        "Saber qual é o próximo passo": 8,
+        "Cumprir prazos": 1,
+        "Escrever o conteúdo": 10,
+        "Conseguir tempo com o orientador": 1
+      },
+      "pct": {
+        "Escolher o tema": 0.05128205128205128,
+        "Escolher o orientador": 0.15384615384615385,
+        "Aplicar as normas ABNT": 0.28205128205128205,
+        "Saber qual é o próximo passo": 0.20512820512820512,
+        "Cumprir prazos": 0.02564102564102564,
+        "Escrever o conteúdo": 0.2564102564102564,
+        "Conseguir tempo com o orientador": 0.02564102564102564
+      }
+    },
+    "A5": {
+      "n": 39,
+      "contagem": {
+        "Referências": 13,
+        "Citações": 15,
+        "Formatação (margens, fonte, espaçamento)": 10,
+        "Sumário e numeração de seções": 9,
+        "Resumo e palavras-chave": 14,
+        "Figuras e tabelas": 6,
+        "Não tenho dificuldade com ABNT": 17
+      },
+      "pct": {
+        "Referências": 0.3333333333333333,
+        "Citações": 0.38461538461538464,
+        "Formatação (margens, fonte, espaçamento)": 0.2564102564102564,
+        "Sumário e numeração de seções": 0.23076923076923078,
+        "Resumo e palavras-chave": 0.358974358974359,
+        "Figuras e tabelas": 0.15384615384615385,
+        "Não tenho dificuldade com ABNT": 0.4358974358974359
+      },
+      "texto_livre": []
+    },
+    "A6": {
+      "n": 39,
+      "media": 2.717948717948718,
+      "pct_4_5": 0.3076923076923077,
+      "distribuicao": {
+        "1": 8,
+        "2": 13,
+        "3": 6,
+        "4": 6,
+        "5": 6
+      }
+    },
+    "A7": {
+      "n": 39,
+      "contagem": {
+        "Já tive aula com o professor": 13,
+        "Indicação de colegas": 14,
+        "Área de pesquisa do professor": 10,
+        "Disponibilidade do professor": 15,
+        "Fui designado pela coordenação": 16,
+        "Ainda não sei": 15
+      },
+      "pct": {
+        "Já tive aula com o professor": 0.3333333333333333,
+        "Indicação de colegas": 0.358974358974359,
+        "Área de pesquisa do professor": 0.2564102564102564,
+        "Disponibilidade do professor": 0.38461538461538464,
+        "Fui designado pela coordenação": 0.41025641025641024,
+        "Ainda não sei": 0.38461538461538464
+      },
+      "texto_livre": []
+    },
+    "A8": {
+      "n": 39,
+      "contagem": {
+        "Discordo totalmente": 1,
+        "Discordo": 2,
+        "Neutro": 6,
+        "Concordo": 16,
+        "Concordo totalmente": 14
+      },
+      "pct": {
+        "Discordo totalmente": 0.02564102564102564,
+        "Discordo": 0.05128205128205128,
+        "Neutro": 0.15384615384615385,
+        "Concordo": 0.41025641025641024,
+        "Concordo totalmente": 0.358974358974359
+      },
+      "top2": 0.7692307692307693
+    },
+    "A9": {
+      "n": 39,
+      "contagem": {
+        "Áreas de pesquisa": 10,
+        "Temas que já orientou": 8,
+        "Vagas disponíveis": 11,
+        "Estilo de orientação (frequência de reuniões, nível de cobrança)": 11,
+        "Tempo médio de resposta": 4,
+        "Opinião agregada de ex-orientandos": 13,
+        "Outro": 16
+      },
+      "pct": {
+        "Áreas de pesquisa": 0.2564102564102564,
+        "Temas que já orientou": 0.20512820512820512,
+        "Vagas disponíveis": 0.28205128205128205,
+        "Estilo de orientação (frequência de reuniões, nível de cobrança)": 0.28205128205128205,
+        "Tempo médio de resposta": 0.10256410256410256,
+        "Opinião agregada de ex-orientandos": 0.3333333333333333,
+        "Outro": 0.41025641025641024
+      },
+      "texto_livre": [
+        "se ele responde e-mail"
+      ]
+    },
+    "A10": {
+      "n": 39,
+      "contagem": {
+        "Nunca": 11,
+        "Algumas vezes": 14,
+        "Frequentemente": 14
+      },
+      "pct": {
+        "Nunca": 0.28205128205128205,
+        "Algumas vezes": 0.358974358974359,
+        "Frequentemente": 0.358974358974359
+      }
+    },
+    "A11": {
+      "n": 39,
+      "contagem": {
+        "Discordo totalmente": 2,
+        "Discordo": 10,
+        "Neutro": 4,
+        "Concordo": 10,
+        "Concordo totalmente": 13
+      },
+      "pct": {
+        "Discordo totalmente": 0.05128205128205128,
+        "Discordo": 0.2564102564102564,
+        "Neutro": 0.10256410256410256,
+        "Concordo": 0.2564102564102564,
+        "Concordo totalmente": 0.3333333333333333
+      },
+      "top2": 0.5897435897435898
+    },
+    "A12": {
+      "n": 39,
+      "contagem": {
+        "Discordo totalmente": 4,
+        "Discordo": 6,
+        "Neutro": 4,
+        "Concordo": 15,
+        "Concordo totalmente": 10
+      },
+      "pct": {
+        "Discordo totalmente": 0.10256410256410256,
+        "Discordo": 0.15384615384615385,
+        "Neutro": 0.10256410256410256,
+        "Concordo": 0.38461538461538464,
+        "Concordo totalmente": 0.2564102564102564
+      },
+      "top2": 0.6410256410256411
+    },
+    "A13": {
+      "n": 39,
+      "contagem": {
+        "Discordo totalmente": 3,
+        "Discordo": 2,
+        "Neutro": 7,
+        "Concordo": 15,
+        "Concordo totalmente": 12
+      },
+      "pct": {
+        "Discordo totalmente": 0.07692307692307693,
+        "Discordo": 0.05128205128205128,
+        "Neutro": 0.1794871794871795,
+        "Concordo": 0.38461538461538464,
+        "Concordo totalmente": 0.3076923076923077
+      },
+      "top2": 0.6923076923076923
+    },
+    "A14": {
+      "n": 39,
+      "contagem": {
+        "Nome": 13,
+        "E-mail institucional": 14,
+        "Curso e período": 12,
+        "Tema do TCC": 17,
+        "Trechos do texto do TCC": 16,
+        "Nenhuma dessas": 16
+      },
+      "pct": {
+        "Nome": 0.3333333333333333,
+        "E-mail institucional": 0.358974358974359,
+        "Curso e período": 0.3076923076923077,
+        "Tema do TCC": 0.4358974358974359,
+        "Trechos do texto do TCC": 0.41025641025641024,
+        "Nenhuma dessas": 0.41025641025641024
+      },
+      "texto_livre": []
+    },
+    "A15": {
+      "respostas": [
+        "Revisar as referências, que sempre volta com correção.",
+        "Um lugar que diga o que falta em cada etapa.",
+        "Revisar as referências, que sempre volta com correção.",
+        "Revisar as referências, que sempre volta com correção.",
+        "Saber antes quem orienta qual tema.",
+        "Revisar as referências, que sempre volta com correção.",
+        "Saber antes quem orienta qual tema.",
+        "Um lugar que diga o que falta em cada etapa.",
+        "Um lugar que diga o que falta em cada etapa.",
+        "Um lugar que diga o que falta em cada etapa.",
+        "Um lugar que diga o que falta em cada etapa.",
+        "Saber antes quem orienta qual tema.",
+        "Um lugar que diga o que falta em cada etapa.",
+        "Saber antes quem orienta qual tema.",
+        "Um lugar que diga o que falta em cada etapa.",
+        "Um lugar que diga o que falta em cada etapa.",
+        "Um lugar que diga o que falta em cada etapa.",
+        "Revisar as referências, que sempre volta com correção.",
+        "Um lugar que diga o que falta em cada etapa.",
+        "Saber antes quem orienta qual tema.",
+        "Revisar as referências, que sempre volta com correção.",
+        "Revisar as referências, que sempre volta com correção.",
+        "Revisar as referências, que sempre volta com correção.",
+        "Revisar as referências, que sempre volta com correção.",
+        "Um lugar que diga o que falta em cada etapa.",
+        "Um lugar que diga o que falta em cada etapa.",
+        "Um lugar que diga o que falta em cada etapa.",
+        "Um lugar que diga o que falta em cada etapa."
+      ]
+    }
+  },
+  "professores": {
+    "P1": {
+      "n": 7,
+      "contagem": {
+        "Sim, atualmente": 3,
+        "Já orientei, mas não no momento": 4,
+        "Nunca orientei": 0
+      },
+      "pct": {
+        "Sim, atualmente": 0.42857142857142855,
+        "Já orientei, mas não no momento": 0.5714285714285714,
+        "Nunca orientei": 0.0
+      }
+    },
+    "P2": {
+      "n": 7,
+      "contagem": {
+        "1 a 3": 1,
+        "4 a 6": 5,
+        "7 ou mais": 1
+      },
+      "pct": {
+        "1 a 3": 0.14285714285714285,
+        "4 a 6": 0.7142857142857143,
+        "7 ou mais": 0.14285714285714285
+      }
+    },
+    "P3": {
+      "linhas": {
+        "Corrigir normas ABNT": {
+          "n": 7,
+          "media": 4.142857142857143,
+          "pct_4_5": 0.8571428571428571,
+          "distribuicao": {
+            "1": 0,
+            "2": 0,
+            "3": 1,
+            "4": 4,
+            "5": 2
+          }
+        },
+        "Explicar etapas e prazos": {
+          "n": 7,
+          "media": 3.2857142857142856,
+          "pct_4_5": 0.42857142857142855,
+          "distribuicao": {
+            "1": 0,
+            "2": 1,
+            "3": 3,
+            "4": 3,
+            "5": 0
+          }
+        },
+        "Ajudar a definir o tema": {
+          "n": 7,
+          "media": 2.857142857142857,
+          "pct_4_5": 0.0,
+          "distribuicao": {
+            "1": 0,
+            "2": 1,
+            "3": 6,
+            "4": 0,
+            "5": 0
+          }
+        },
+        "Revisar conteúdo e argumentação": {
+          "n": 7,
+          "media": 3.7142857142857144,
+          "pct_4_5": 0.42857142857142855,
+          "distribuicao": {
+            "1": 0,
+            "2": 0,
+            "3": 4,
+            "4": 1,
+            "5": 2
+          }
+        },
+        "Orientar a metodologia": {
+          "n": 7,
+          "media": 2.7142857142857144,
+          "pct_4_5": 0.42857142857142855,
+          "distribuicao": {
+            "1": 2,
+            "2": 1,
+            "3": 1,
+            "4": 3,
+            "5": 0
+          }
+        },
+        "Cobrar entregas atrasadas": {
+          "n": 7,
+          "media": 2.7142857142857144,
+          "pct_4_5": 0.14285714285714285,
+          "distribuicao": {
+            "1": 0,
+            "2": 3,
+            "3": 3,
+            "4": 1,
+            "5": 0
+          }
+        }
+      },
+      "faltando": []
+    },
+    "P4": {
+      "n": 7,
+      "contagem": {
+        "Corrigir normas ABNT": 3,
+        "Explicar etapas e prazos": 1,
+        "Ajudar a definir o tema": 0,
+        "Revisar conteúdo e argumentação": 1,
+        "Orientar a metodologia": 2,
+        "Cobrar entregas atrasadas": 0
+      },
+      "pct": {
+        "Corrigir normas ABNT": 0.42857142857142855,
+        "Explicar etapas e prazos": 0.14285714285714285,
+        "Ajudar a definir o tema": 0.0,
+        "Revisar conteúdo e argumentação": 0.14285714285714285,
+        "Orientar a metodologia": 0.2857142857142857,
+        "Cobrar entregas atrasadas": 0.0
+      }
+    },
+    "P5": {
+      "n": 7,
+      "contagem": {
+        "Discordo totalmente": 2,
+        "Discordo": 1,
+        "Neutro": 2,
+        "Concordo": 2,
+        "Concordo totalmente": 0
+      },
+      "pct": {
+        "Discordo totalmente": 0.2857142857142857,
+        "Discordo": 0.14285714285714285,
+        "Neutro": 0.2857142857142857,
+        "Concordo": 0.2857142857142857,
+        "Concordo totalmente": 0.0
+      },
+      "top2": 0.2857142857142857
+    },
+    "P6": {
+      "n": 7,
+      "contagem": {
+        "Discordo totalmente": 0,
+        "Discordo": 2,
+        "Neutro": 2,
+        "Concordo": 1,
+        "Concordo totalmente": 2
+      },
+      "pct": {
+        "Discordo totalmente": 0.0,
+        "Discordo": 0.2857142857142857,
+        "Neutro": 0.2857142857142857,
+        "Concordo": 0.14285714285714285,
+        "Concordo totalmente": 0.2857142857142857
+      },
+      "top2": 0.42857142857142855
+    },
+    "P7": {
+      "n": 7,
+      "contagem": {
+        "Discordo totalmente": 0,
+        "Discordo": 3,
+        "Neutro": 3,
+        "Concordo": 0,
+        "Concordo totalmente": 1
+      },
+      "pct": {
+        "Discordo totalmente": 0.0,
+        "Discordo": 0.42857142857142855,
+        "Neutro": 0.42857142857142855,
+        "Concordo": 0.0,
+        "Concordo totalmente": 0.14285714285714285
+      },
+      "top2": 0.14285714285714285
+    },
+    "P8": {
+      "n": 7,
+      "contagem": {
+        "Texto gerado pela IA no lugar do aluno": 4,
+        "Informações erradas": 1,
+        "Aluno aprender menos": 3,
+        "Privacidade dos dados": 3,
+        "Não tenho preocupações": 3,
+        "Outra": 3
+      },
+      "pct": {
+        "Texto gerado pela IA no lugar do aluno": 0.5714285714285714,
+        "Informações erradas": 0.14285714285714285,
+        "Aluno aprender menos": 0.42857142857142855,
+        "Privacidade dos dados": 0.42857142857142855,
+        "Não tenho preocupações": 0.42857142857142855,
+        "Outra": 0.42857142857142855
+      },
+      "texto_livre": []
+    },
+    "P9": {
+      "n": 7,
+      "contagem": {
+        "Discordo totalmente": 0,
+        "Discordo": 1,
+        "Neutro": 0,
+        "Concordo": 3,
+        "Concordo totalmente": 3
+      },
+      "pct": {
+        "Discordo totalmente": 0.0,
+        "Discordo": 0.14285714285714285,
+        "Neutro": 0.0,
+        "Concordo": 0.42857142857142855,
+        "Concordo totalmente": 0.42857142857142855
+      },
+      "top2": 0.8571428571428571
+    },
+    "P10": {
+      "n": 7,
+      "contagem": {
+        "Discordo totalmente": 0,
+        "Discordo": 0,
+        "Neutro": 0,
+        "Concordo": 4,
+        "Concordo totalmente": 3
+      },
+      "pct": {
+        "Discordo totalmente": 0.0,
+        "Discordo": 0.0,
+        "Neutro": 0.0,
+        "Concordo": 0.5714285714285714,
+        "Concordo totalmente": 0.42857142857142855
+      },
+      "top2": 1.0
+    },
+    "P11": {
+      "n": 7,
+      "contagem": {
+        "Áreas de pesquisa": 2,
+        "Temas que já orientou": 1,
+        "Vagas disponíveis": 1,
+        "Estilo de orientação": 5,
+        "Forma de contato preferida": 3,
+        "Nada, não teria perfil": 4
+      },
+      "pct": {
+        "Áreas de pesquisa": 0.2857142857142857,
+        "Temas que já orientou": 0.14285714285714285,
+        "Vagas disponíveis": 0.14285714285714285,
+        "Estilo de orientação": 0.7142857142857143,
+        "Forma de contato preferida": 0.42857142857142855,
+        "Nada, não teria perfil": 0.5714285714285714
+      },
+      "texto_livre": []
+    },
+    "P12": {
+      "n": 7,
+      "contagem": {
+        "Discordo totalmente": 3,
+        "Discordo": 0,
+        "Neutro": 2,
+        "Concordo": 2,
+        "Concordo totalmente": 0
+      },
+      "pct": {
+        "Discordo totalmente": 0.42857142857142855,
+        "Discordo": 0.0,
+        "Neutro": 0.2857142857142857,
+        "Concordo": 0.2857142857142857,
+        "Concordo totalmente": 0.0
+      },
+      "top2": 0.2857142857142857
+    },
+    "P13": {
+      "respostas": [
+        "Revisar as referências, que sempre volta com correção.",
+        "Saber antes quem orienta qual tema.",
+        "Saber antes quem orienta qual tema.",
+        "Um lugar que diga o que falta em cada etapa."
+      ]
+    }
+  }
+}

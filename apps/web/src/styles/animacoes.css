@@ -1,0 +1,160 @@
+/*
+ * Animações do Threshold — "arquivo paranormal".
+ * Regras: nada pisca mais de 3 vezes por segundo (WCAG 2.3.1); tudo some com prefers-reduced-motion
+ * (bloco no fim deste arquivo); nenhuma animação esconde informação de quem usa leitor de tela.
+ */
+
+/* ---------- Carimbo batendo ---------- */
+@keyframes carimbo-bater {
+  0% { opacity: 0; transform: rotate(-3deg) scale(2.4); }
+  55% { opacity: 1; transform: rotate(-3deg) scale(0.92); }
+  75% { transform: rotate(-3deg) scale(1.04); }
+  100% { opacity: 1; transform: rotate(-3deg) scale(1); }
+}
+.carimbo {
+  animation: carimbo-bater 420ms cubic-bezier(0.2, 0.9, 0.3, 1) both;
+  animation-delay: var(--atraso-carimbo, 250ms);
+}
+
+/* ---------- Tarja se abrindo (desclassificar) ---------- */
+@keyframes tarja-abrir {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0); }
+}
+.desclassificar {
+  position: relative;
+  display: inline-block; /* uma caixa só, mesmo com várias linhas: a tarja cobre o bloco todo */
+  max-width: 100%;
+}
+.desclassificar::after {
+  content: '';
+  position: absolute;
+  inset: -0.04em -0.12em;
+  background: var(--color-text);
+  transform-origin: right center;
+  animation: tarja-abrir 650ms cubic-bezier(0.7, 0, 0.2, 1) var(--atraso, 0ms) forwards;
+  pointer-events: none;
+}
+
+/* ---------- Máquina de escrever ---------- */
+@keyframes cursor-piscar {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.maquina { cursor: text; }
+.maquina__cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.05em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: var(--color-lantern);
+  animation: cursor-piscar 1s steps(1) infinite; /* 1 vez por segundo: bem abaixo do limite de 3 */
+}
+
+/* ---------- Luz da Lantern (respiração lenta, sem piscar) ---------- */
+@keyframes lantern-respirar {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(242, 181, 68, 0); }
+  50% { box-shadow: 0 0 28px 2px rgba(242, 181, 68, 0.28); }
+}
+.lantern-brilho { animation: lantern-respirar 3.6s ease-in-out infinite; }
+
+@keyframes lampada-respirar {
+  0%, 100% { opacity: 0.55; transform: scale(0.96); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* ---------- Abertura "acessando arquivo" ---------- */
+@keyframes linha-entrar {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+.abertura {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: var(--color-bg);
+  transition: opacity 350ms ease;
+}
+.abertura--saindo { opacity: 0; }
+.abertura__caixa {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 32px;
+  font: 500 14px/1.4 var(--font-mono);
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+}
+.abertura__lampada {
+  width: 14px;
+  height: 46px;
+  margin-bottom: 14px;
+  background: var(--color-lantern);
+  box-shadow: 0 0 36px 6px rgba(242, 181, 68, 0.35);
+  animation: lampada-respirar 1.6s ease-in-out infinite;
+}
+.abertura__linha {
+  margin: 0;
+  opacity: 0;
+  animation: linha-entrar 260ms ease-out forwards;
+}
+.abertura__linha:last-of-type { color: var(--color-lantern); }
+
+/* ---------- Mensagens entrando no chat ---------- */
+@keyframes mensagem-entrar {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.mensagem { animation: mensagem-entrar 240ms ease-out both; }
+
+/* ---------- Quem pediu menos movimento: tudo parado e visível ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .desclassificar::after { display: none; }
+  .abertura { display: none; }
+  .maquina__cursor { display: none; }
+  .carimbo,
+  .lantern-brilho,
+  .mensagem { animation: none; }
+}
+
+/* ---------- Telefone da Hotline tocando ----------
+ * O fone pula no gancho e o cartão treme de leve, acompanhando o toque (≈3,5 s).
+ * É movimento, não piscar: nada acende e apaga (WCAG 2.3.1). Some com "reduzir movimento". */
+@keyframes fone-pular {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  25% { transform: translateY(-2px) rotate(-6deg); }
+  75% { transform: translateY(-2px) rotate(6deg); }
+}
+@keyframes chamada-tremer {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-1.5px); }
+  75% { transform: translateX(1.5px); }
+}
+@keyframes chamada-entrar {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+.chamada { animation: chamada-entrar 280ms ease-out both; }
+.chamada--tocando { animation: chamada-tremer 90ms linear infinite; }
+.chamada--tocando .telefone__fone { transform-origin: 24px 14px; animation: fone-pular 90ms linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .chamada,
+  .chamada--tocando,
+  .chamada--tocando .telefone__fone { animation: none; }
+}
+
+/* ---------- Sala de Recorte: o fio sendo esticado enquanto a Lantern pensa ---------- */
+@keyframes fio-esticar {
+  from { stroke-dashoffset: 420; }
+  to { stroke-dashoffset: 0; }
+}
+.fios-carregando .fio { stroke-dasharray: 420; animation: fio-esticar 1.6s ease-in-out infinite alternate; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fios-carregando .fio { animation: none; stroke-dasharray: none; }
+  .ficha-quadro { transition: none; }
+}

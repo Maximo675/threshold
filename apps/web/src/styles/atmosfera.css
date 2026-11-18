@@ -1,0 +1,171 @@
+/*
+ * Atmosfera do Threshold — "arquivo paranormal", desenhada por nós (nenhum asset ou símbolo de terceiros).
+ *
+ * Camadas, de trás para a frente:
+ *   1. concreto     fundo da página com manchas e juntas de fôrma (só gradientes CSS)
+ *   2. luz          foco âmbar que segue o cursor: a Lantern iluminando a parede
+ *   3. sinalização  número do setor pintado ao fundo de cada sala
+ *   4. conteúdo     cartões com fibra de papel; a borda acende perto do cursor
+ *   5. grão         granulado de filme por cima de tudo (SVG embutido, não bloqueia cliques)
+ *
+ * Acessibilidade: tudo é decorativo e não muda o contraste do texto de forma perceptível;
+ * com "reduzir movimento" ou com o botão "Efeitos de luz" desligado, a luz fica parada e os cartões não reagem.
+ * As variáveis --luz-x, --luz-y, --px e --py são atualizadas por components/Ambiente.tsx.
+ */
+
+:root {
+  --luz-x: -999px;
+  --luz-y: -999px;
+  --px: 0;
+  --py: 0;
+}
+
+/* 1. Concreto */
+body {
+  background-color: var(--color-bg);
+  background-image:
+    /* juntas verticais das fôrmas, a cada 160 px */
+    repeating-linear-gradient(90deg, transparent 0 159px, rgba(255, 255, 255, 0.022) 159px 160px),
+    /* marcas horizontais mais raras */
+    repeating-linear-gradient(0deg, transparent 0 479px, rgba(0, 0, 0, 0.35) 479px 481px),
+    /* manchas de umidade */
+    radial-gradient(900px 600px at 12% 8%, rgba(255, 255, 255, 0.035), transparent 70%),
+    radial-gradient(700px 700px at 88% 62%, rgba(255, 255, 255, 0.025), transparent 70%),
+    radial-gradient(1200px 500px at 50% 110%, rgba(0, 0, 0, 0.5), transparent 70%);
+  background-attachment: fixed;
+}
+
+/* 2. Luz */
+.ambiente { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+.ambiente__luz {
+  position: absolute;
+  inset: 0;
+  /* luz parada, vinda de cima: vale para celular, "reduzir movimento" e efeitos desligados */
+  background: radial-gradient(1100px 520px at 50% -140px, rgba(242, 181, 68, 0.09), transparent 70%);
+}
+[data-efeitos='ligado'] .ambiente__luz {
+  background:
+    radial-gradient(560px circle at var(--luz-x) var(--luz-y), rgba(242, 181, 68, 0.13), rgba(242, 181, 68, 0.04) 45%, transparent 70%),
+    radial-gradient(1100px 520px at 50% -140px, rgba(242, 181, 68, 0.06), transparent 70%);
+}
+/* vinheta: as bordas da sala ficam no escuro */
+.ambiente__luz::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 90% at 50% 40%, transparent 55%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+/* 5. Grão (fica acima do conteúdo, abaixo da chamada da Hotline e da abertura) */
+.ambiente__grao {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0.11;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+
+/* 3. Sinalização de setor */
+.page { position: relative; z-index: 1; overflow: hidden; }
+.page__inner { position: relative; z-index: 1; }
+.page[data-setor]::before {
+  content: attr(data-setor);
+  content: attr(data-setor) / ''; /* decorativo: sem texto alternativo para leitores de tela */
+  position: absolute;
+  top: 96px;
+  right: -12px;
+  z-index: 0;
+  font: 700 clamp(180px, 30vw, 440px) / 0.8 var(--font-condensed);
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(236, 230, 216, 0.075);
+  background: linear-gradient(180deg, rgba(236, 230, 216, 0.05), transparent 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  pointer-events: none;
+  user-select: none;
+  /* profundidade: o número se desloca um pouco no sentido contrário ao do cursor */
+  transform: translate(calc(var(--px) * -16px), calc(var(--py) * -10px));
+  transition: transform 500ms ease-out;
+}
+
+/* 4. Superfícies: fibra de papel + borda que acende perto do cursor */
+.card,
+.etapa,
+.agente,
+.recorte,
+.numero,
+.orientando,
+.revisada,
+.verificacao,
+.outra-ficha,
+.mensagem {
+  position: relative;
+  background-image:
+    radial-gradient(420px circle at var(--luz-x) var(--luz-y), rgba(242, 181, 68, 0.055), transparent 65%),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.014) 0 1px, transparent 1px 4px);
+  background-attachment: fixed, scroll;
+}
+.card--tracejado { background-image: none; }
+
+[data-efeitos='ligado'] :is(.card, .etapa, .agente, .recorte, .numero, .orientando, .revisada, .verificacao, .outra-ficha)::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(240px circle at var(--luz-x) var(--luz-y), rgba(242, 181, 68, 0.9), transparent 70%) fixed;
+  /* mostra o gradiente só na faixa de 1 px da borda */
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  pointer-events: none;
+}
+
+/* Botão principal: um reflexo atravessa quando o cursor encosta */
+.btn-lantern { position: relative; overflow: hidden; isolation: isolate; }
+.btn-lantern::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.55) 50%, transparent 65%);
+  transform: translateX(-120%);
+  transition: transform 650ms ease;
+}
+.btn-lantern:hover:not(:disabled)::after,
+.btn-lantern:focus-visible::after { transform: translateX(120%); }
+
+/* Abas: o sublinhado cresce a partir do centro */
+.cabecalho__link { position: relative; transition: color 200ms ease; }
+.cabecalho__link::after {
+  content: '';
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: -2px;
+  height: 2px;
+  background: var(--color-lantern);
+  transform: scaleX(0);
+  transition: transform 220ms ease;
+}
+.cabecalho__link:hover { color: var(--color-text); }
+.cabecalho__link:hover::after { transform: scaleX(1); }
+.cabecalho__link[aria-current='page']::after { display: none; }
+
+/* Etapas e linhas: uma régua âmbar cresce na lateral */
+.etapa,
+.orientando,
+.revisada { transition: border-color 200ms ease; }
+.etapa:hover:not(.etapa--classificado) { border-color: var(--color-border-strong); }
+.etapa--atual:hover { border-color: var(--color-lantern); }
+
+/* A tarja "respira" quando o cursor passa: lembra que há algo protegido ali */
+.tarja { transition: filter 200ms ease, transform 200ms ease; transform-origin: left center; }
+.tarja:hover { filter: brightness(1.25); transform: scaleX(1.02); }
+
+@media (prefers-reduced-motion: reduce) {
+  .page[data-setor]::before { transform: none; }
+}

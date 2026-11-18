@@ -1,0 +1,209 @@
+[
+  {
+    "id": "REF-AUTOR-01",
+    "tipo_documento": "geral",
+    "titulo": "Sobrenome do autor em maiúsculas, prenome depois",
+    "explicacao": "A referência começa pelo último sobrenome em caixa alta, seguido de vírgula e do prenome (por extenso ou abreviado, do jeito que aparece na obra).",
+    "exemplo_errado": "Marina Souza. **Métodos de pesquisa em computação**. Curitiba: Editora Exemplo, 2021.",
+    "exemplo_certo": "SOUZA, Marina. **Métodos de pesquisa em computação**. Curitiba: Editora Exemplo, 2021.",
+    "fonte": "UFV 2025; UFU 2024"
+  },
+  {
+    "id": "REF-AUTOR-02",
+    "tipo_documento": "geral",
+    "titulo": "Vários autores separados por ponto e vírgula",
+    "explicacao": "Com até três autores, todos aparecem, separados por ponto e vírgula. Nada de \"e\" ou \"&\" entre os nomes.",
+    "exemplo_errado": "LIMA, Ana e COSTA, Bruno. **Guia de redação técnica**. São Paulo: Editora Exemplo, 2019.",
+    "exemplo_certo": "LIMA, Ana; COSTA, Bruno. **Guia de redação técnica**. São Paulo: Editora Exemplo, 2019.",
+    "fonte": "UFV 2025; UFU 2024; Unicamp 2023"
+  },
+  {
+    "id": "REF-AUTOR-03",
+    "tipo_documento": "geral",
+    "titulo": "Quatro ou mais autores: todos ou o primeiro + et al.",
+    "explicacao": "Com quatro ou mais autores, o recomendado é listar todos. É permitido listar só o primeiro seguido de \"et al.\". Escolha uma forma e use igual em todas as referências do trabalho.",
+    "exemplo_errado": "MORAIS, Clara; PRADO, Davi et al. **Engenharia de requisitos na prática**. Rio de Janeiro: Editora Exemplo, 2022.",
+    "exemplo_certo": "MORAIS, Clara et al. **Engenharia de requisitos na prática**. Rio de Janeiro: Editora Exemplo, 2022.",
+    "fonte": "UFV 2025; UFU 2024; Unicamp 2023; UFMG 2023"
+  },
+  {
+    "id": "REF-AUTOR-04",
+    "tipo_documento": "geral",
+    "titulo": "Organizador, coordenador ou editor: abreviação no singular entre parênteses",
+    "explicacao": "Quando a obra tem organizador (ou coordenador, editor), o nome dele entra como autor, seguido da abreviação entre parênteses e sempre no singular, mesmo que sejam vários: (org.), (coord.), (ed.).",
+    "exemplo_errado": "RAMOS, Igor; DIAS, Joana (orgs.). **Interfaces para educação**. Curitiba: Editora Exemplo, 2020.",
+    "exemplo_certo": "RAMOS, Igor; DIAS, Joana (org.). **Interfaces para educação**. Curitiba: Editora Exemplo, 2020.",
+    "fonte": "UFV 2025; UNESP 2023"
+  },
+  {
+    "id": "REF-ENTIDADE-01",
+    "tipo_documento": "geral",
+    "titulo": "Entidade como autor em maiúsculas",
+    "explicacao": "Quando o autor é uma instituição, associação ou empresa, ela entra pelo nome como é conhecida, todo em caixa alta.",
+    "exemplo_errado": "Associação Exemplo de Engenharia de Software. **Relatório anual de atividades**. Curitiba: AEES, 2023.",
+    "exemplo_certo": "ASSOCIAÇÃO EXEMPLO DE ENGENHARIA DE SOFTWARE. **Relatório anual de atividades**. Curitiba: AEES, 2023.",
+    "fonte": "UFV 2025; UFU 2024; UNESP 2023"
+  },
+  {
+    "id": "REF-ENTIDADE-02",
+    "tipo_documento": "geral",
+    "titulo": "Órgão de governo: jurisdição antes do nome",
+    "explicacao": "Órgão público ligado a um país, estado ou município entra pela jurisdição em maiúsculas e depois o nome do órgão. Se precisar diferenciar, coloque o tipo da jurisdição entre parênteses, como (Estado).",
+    "exemplo_errado": "Secretaria de Exemplo. **Plano estadual de inclusão digital**. São Paulo: Secretaria de Exemplo, 2020.",
+    "exemplo_certo": "SÃO PAULO (Estado). Secretaria de Exemplo. **Plano estadual de inclusão digital**. São Paulo: Secretaria de Exemplo, 2020.",
+    "fonte": "UFV 2025; UNESP 2023"
+  },
+  {
+    "id": "REF-TITULO-01",
+    "tipo_documento": "geral",
+    "titulo": "Título em destaque",
+    "explicacao": "O título da obra principal recebe destaque (negrito, itálico ou sublinhado). Escolha um só tipo de destaque e use em todas as referências. Nesta base o destaque é representado por **negrito**.",
+    "exemplo_errado": "SOUZA, Marina. Métodos de pesquisa em computação. Curitiba: Editora Exemplo, 2021.",
+    "exemplo_certo": "SOUZA, Marina. **Métodos de pesquisa em computação**. Curitiba: Editora Exemplo, 2021.",
+    "fonte": "UFV 2025; Unicamp 2023; UFMG 2023"
+  },
+  {
+    "id": "REF-TITULO-02",
+    "tipo_documento": "geral",
+    "titulo": "Subtítulo sem destaque, depois de dois-pontos",
+    "explicacao": "O subtítulo vem depois do título, separado por dois-pontos, e não recebe destaque.",
+    "exemplo_errado": "NOGUEIRA, Paulo. **Testes de software: guia para iniciantes**. Curitiba: Editora Exemplo, 2023.",
+    "exemplo_certo": "NOGUEIRA, Paulo. **Testes de software**: guia para iniciantes. Curitiba: Editora Exemplo, 2023.",
+    "fonte": "UFV 2025; UFMG 2023"
+  },
+  {
+    "id": "REF-TITULO-03",
+    "tipo_documento": "geral",
+    "titulo": "Obra sem autor: entrada pelo título, sem destaque",
+    "explicacao": "Se não há autor, a referência começa pelo título, com a primeira palavra em maiúsculas (se começar com artigo ou palavra curta, ela vai em maiúsculas junto). Nesse caso o título não leva destaque.",
+    "exemplo_errado": "**Guia prático de acessibilidade web**. São Paulo: Editora Exemplo, 2021.",
+    "exemplo_certo": "GUIA prático de acessibilidade web. São Paulo: Editora Exemplo, 2021.",
+    "fonte": "UFV 2025; Unicamp 2023"
+  },
+  {
+    "id": "REF-EDICAO-01",
+    "tipo_documento": "geral",
+    "titulo": "Edição abreviada: número, ponto e ed.",
+    "explicacao": "A edição vem depois do título, com o número seguido de ponto e da abreviatura \"ed.\": 2. ed., 3. ed. Não use \"2ª edição\" nem \"2 ed\".",
+    "exemplo_errado": "SOUZA, Marina. **Métodos de pesquisa em computação**. 2ª edição. Curitiba: Editora Exemplo, 2021.",
+    "exemplo_certo": "SOUZA, Marina. **Métodos de pesquisa em computação**. 2. ed. Curitiba: Editora Exemplo, 2021.",
+    "fonte": "UFV 2025; UFU 2024"
+  },
+  {
+    "id": "REF-PUB-01",
+    "tipo_documento": "geral",
+    "titulo": "Local: Editora, ano",
+    "explicacao": "Os dados de publicação seguem a ordem local, dois-pontos, editora, vírgula, ano.",
+    "exemplo_errado": "SOUZA, Marina. **Métodos de pesquisa em computação**. Editora Exemplo, Curitiba, 2021.",
+    "exemplo_certo": "SOUZA, Marina. **Métodos de pesquisa em computação**. Curitiba: Editora Exemplo, 2021.",
+    "fonte": "UFV 2025; UFU 2024"
+  },
+  {
+    "id": "REF-PUB-02",
+    "tipo_documento": "geral",
+    "titulo": "Editora sem natureza jurídica",
+    "explicacao": "O nome da editora entra sem as partes que indicam o tipo de empresa, como Ltda., S.A. ou Eireli.",
+    "exemplo_errado": "VIEIRA, Rui. **Banco de dados para iniciantes**. Curitiba: Editora Exemplo Ltda., 2020.",
+    "exemplo_certo": "VIEIRA, Rui. **Banco de dados para iniciantes**. Curitiba: Editora Exemplo, 2020.",
+    "fonte": "UFV 2025"
+  },
+  {
+    "id": "REF-PUB-03",
+    "tipo_documento": "geral",
+    "titulo": "Sem local ou sem editora: [S. l.] e [s. n.]",
+    "explicacao": "Se a obra não informa o local, use [S. l.]. Se não informa a editora, use [s. n.]. Se faltam os dois, use [S. l.: s. n.]. Não invente um local nem deixe o espaço vazio.",
+    "exemplo_errado": "PEREIRA, Gustavo. **Manual de laboratório**. Editora Exemplo, 2018.",
+    "exemplo_certo": "PEREIRA, Gustavo. **Manual de laboratório**. [S. l.]: Editora Exemplo, 2018.",
+    "fonte": "UFV 2025; UFU 2024"
+  },
+  {
+    "id": "REF-DATA-01",
+    "tipo_documento": "geral",
+    "titulo": "Data incerta entre colchetes",
+    "explicacao": "Se o ano não aparece na obra, indique uma data aproximada entre colchetes: [2010?] para ano provável, [ca. 2010] para aproximado, [201-] para década certa, [20--?] para século provável.",
+    "exemplo_errado": "TEIXEIRA, Sara. **Introdução à lógica**. Curitiba: Editora Exemplo, 2010?.",
+    "exemplo_certo": "TEIXEIRA, Sara. **Introdução à lógica**. Curitiba: Editora Exemplo, [2010?].",
+    "fonte": "UFV 2025; UFMG 2023"
+  },
+  {
+    "id": "REF-DATA-02",
+    "tipo_documento": "geral",
+    "titulo": "Meses abreviados",
+    "explicacao": "Meses aparecem abreviados no idioma do documento: jan., fev., mar., abr., maio, jun., jul., ago., set., out., nov., dez. Maio é escrito por extenso.",
+    "exemplo_errado": "... v. 12, n. 3, p. 45-60, março 2024.",
+    "exemplo_certo": "... v. 12, n. 3, p. 45-60, mar. 2024.",
+    "fonte": "UFV 2025; UFU 2024"
+  },
+  {
+    "id": "REF-PONT-01",
+    "tipo_documento": "geral",
+    "titulo": "Ponto final no fim da referência",
+    "explicacao": "Toda referência termina com ponto final.",
+    "exemplo_errado": "SOUZA, Marina. **Métodos de pesquisa em computação**. Curitiba: Editora Exemplo, 2021",
+    "exemplo_certo": "SOUZA, Marina. **Métodos de pesquisa em computação**. Curitiba: Editora Exemplo, 2021.",
+    "fonte": "UFV 2025"
+  },
+  {
+    "id": "REF-CAP-01",
+    "tipo_documento": "capitulo",
+    "titulo": "Capítulo de livro: In:, destaque no livro e páginas",
+    "explicacao": "Primeiro vem o autor e o título do capítulo (sem destaque). Depois \"In:\", o responsável pelo livro, o título do livro (com destaque), os dados de publicação e, no fim, as páginas do capítulo com \"p.\" e hífen: p. 45-68.",
+    "exemplo_errado": "ALVES, Helena. **Usabilidade em sistemas acadêmicos**. In: RAMOS, Igor (org.). Interfaces para educação. Curitiba: Editora Exemplo, 2020. 45-68.",
+    "exemplo_certo": "ALVES, Helena. Usabilidade em sistemas acadêmicos. In: RAMOS, Igor (org.). **Interfaces para educação**. Curitiba: Editora Exemplo, 2020. p. 45-68.",
+    "fonte": "UFV 2025; UFU 2024; UNESP 2023"
+  },
+  {
+    "id": "REF-ART-01",
+    "tipo_documento": "artigo",
+    "titulo": "Artigo: destaque no nome da revista, não no artigo",
+    "explicacao": "Em artigo de periódico, o destaque vai no nome da revista. O título do artigo fica sem destaque.",
+    "exemplo_errado": "BARROS, Júlia. **Avaliação de acessibilidade em portais universitários**. Revista Exemplo de Computação, Curitiba, v. 12, n. 3, p. 45-60, mar. 2024.",
+    "exemplo_certo": "BARROS, Júlia. Avaliação de acessibilidade em portais universitários. **Revista Exemplo de Computação**, Curitiba, v. 12, n. 3, p. 45-60, mar. 2024.",
+    "fonte": "UFV 2025; UFU 2024"
+  },
+  {
+    "id": "REF-ART-02",
+    "tipo_documento": "artigo",
+    "titulo": "Artigo: local, v., n., p., mês e ano separados por vírgula",
+    "explicacao": "Depois do nome da revista vêm local, volume (v.), número (n.), páginas (p.) e data (mês abreviado e ano), separados por vírgula. Use as abreviaturas v., n. e p., não vol., nº ou pp.",
+    "exemplo_errado": "BARROS, Júlia. Leitura em telas. **Revista Exemplo de Computação**, Curitiba, vol. 8, nº 2, pp. 5-19, jun. 2022.",
+    "exemplo_certo": "BARROS, Júlia. Leitura em telas. **Revista Exemplo de Computação**, Curitiba, v. 8, n. 2, p. 5-19, jun. 2022.",
+    "fonte": "UFV 2025; UFU 2024; UNESP 2023"
+  },
+  {
+    "id": "REF-ONLINE-01",
+    "tipo_documento": "online",
+    "titulo": "Documento online: Disponível em e Acesso em",
+    "explicacao": "Documento consultado na internet termina com \"Disponível em:\" seguido do endereço e \"Acesso em:\" seguido de dia, mês abreviado e ano em que você acessou.",
+    "exemplo_errado": "COSTA, Lívia. **Boas práticas de citação em projetos**. [S. l.], 2024. https://www.exemplo.org/citacao.",
+    "exemplo_certo": "COSTA, Lívia. **Boas práticas de citação em projetos**. [S. l.], 2024. Disponível em: https://www.exemplo.org/citacao. Acesso em: 19 out. 2026.",
+    "fonte": "UFV 2025; UFU 2024; Unicamp 2023"
+  },
+  {
+    "id": "REF-DOI-01",
+    "tipo_documento": "online",
+    "titulo": "DOI depois dos dados da publicação",
+    "explicacao": "Se o documento tem DOI, ele aparece como \"DOI:\" seguido do código, depois dos dados da publicação e antes de \"Disponível em:\".",
+    "exemplo_errado": "BARROS, Júlia. Leitura em telas. **Revista Exemplo de Computação**, Curitiba, v. 9, n. 1, p. 10-22, maio 2025. Disponível em: https://revista.exemplo.org/artigo/42. Acesso em: 19 out. 2026. 10.99999/rec.2025.0042.",
+    "exemplo_certo": "BARROS, Júlia. Leitura em telas. **Revista Exemplo de Computação**, Curitiba, v. 9, n. 1, p. 10-22, maio 2025. DOI: 10.99999/rec.2025.0042. Disponível em: https://revista.exemplo.org/artigo/42. Acesso em: 19 out. 2026.",
+    "fonte": "UFMG 2023; UFU 2024"
+  },
+  {
+    "id": "REF-ACAD-01",
+    "tipo_documento": "academico",
+    "titulo": "TCC, dissertação e tese: natureza entre parênteses e travessão",
+    "explicacao": "Depois do título vêm o ano, o tipo do trabalho com o grau e o curso entre parênteses, um travessão, a instituição, o local e o ano da defesa. Orientador e número de folhas são opcionais.",
+    "exemplo_errado": "MENDES, Otávio. **Plataforma de apoio ao TCC**: um estudo de caso. TCC (Engenharia de Software), Faculdade Exemplo, Curitiba, 2025.",
+    "exemplo_certo": "MENDES, Otávio. **Plataforma de apoio ao TCC**: um estudo de caso. 2025. Trabalho de Conclusão de Curso (Graduação em Engenharia de Software) – Faculdade Exemplo, Curitiba, 2025.",
+    "fonte": "UFV 2025; UFU 2024; UNESP 2023; UFMG 2023"
+  },
+  {
+    "id": "REF-LEG-01",
+    "tipo_documento": "legislacao",
+    "titulo": "Legislação: jurisdição, tipo e número, data, ementa e publicação",
+    "explicacao": "Comece pela jurisdição em maiúsculas (com a sigla do estado entre parênteses no caso de município), depois o tipo e número do ato, a data por extenso, a ementa e os dados de publicação.",
+    "exemplo_errado": "Lei 1234 de 05/03/2024 - Exemplópolis.",
+    "exemplo_certo": "EXEMPLÓPOLIS (PR). Lei nº 1.234, de 5 de março de 2024. Dispõe sobre o incentivo à pesquisa estudantil no município. Exemplópolis: Câmara Municipal, 2024.",
+    "fonte": "UFV 2025; UFU 2024; UNESP 2023; UFMG 2023"
+  }
+]

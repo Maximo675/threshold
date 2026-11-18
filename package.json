@@ -1,0 +1,19 @@
+{
+  "name": "threshold",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Threshold — plataforma com agentes de IA que guia alunos e orientadores no TCC (TCC Engenharia de Software, UniCuritiba 2026).",
+  "workspaces": ["apps/*"],
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev:web": "npm run dev -w web",
+    "dev:api": "npm run dev -w api",
+    "build": "npm run build --workspaces",
+    "demo": "npm run build && node scripts/servidor-demo.mjs",
+    "ao-vivo": "npm run build -w api && node scripts/servidor-demo.mjs --ao-vivo",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "typecheck": "npm run typecheck --workspaces",
+    "e2e": "npm run build && start-server-and-test \"node scripts/servidor-e2e.mjs\" http://localhost:4173/api/saude \"npm run cypress -w web\""
+  }
+}

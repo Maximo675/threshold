@@ -1,0 +1,50 @@
+# Ambiente local do Threshold.
+#
+#   docker compose up --build      → sobe tudo. Abra http://localhost:8080
+#   docker compose down            → para tudo (os dados do banco ficam guardados)
+#   docker compose down -v         → para e APAGA o banco
+#
+# Antes da primeira vez: copie .env.example para .env e preencha os dois segredos.
+# Guia completo: docs/05-como-rodar-e-testar.md
+services:
+  app:
+    build: .
+    image: threshold:local
+    restart: unless-stopped
+    environment:
+      PSEUDONIMO_SEGREDO: ${PSEUDONIMO_SEGREDO:?defina PSEUDONIMO_SEGREDO no arquivo .env (veja .env.example)}
+      LIMITE_REQUISICOES_POR_MINUTO: ${LIMITE_REQUISICOES_POR_MINUTO:-60}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+      DATABASE_URL: postgres://${POSTGRES_USER:-threshold}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-threshold}
+      # IA da Lantern (opcional: sem isso a plataforma abre e a Lantern fica "offline")
+      LLM_PROVEDOR: ${LLM_PROVEDOR:-}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      LLM_MODELO: ${LLM_MODELO:-}
+      LLM_URL_BASE: ${LLM_URL_BASE:-}
+      LIMITE_LANTERN_POR_MINUTO: ${LIMITE_LANTERN_POR_MINUTO:-20}
+    extra_hosts:
+      - "host.docker.internal:host-gateway" # deixa o contêiner falar com o Ollama da sua máquina (Linux)
+    ports:
+      - "127.0.0.1:8080:3333" # só na sua máquina, nunca exposto na rede
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: pgvector/pgvector:pg17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-threshold}
+      POSTGRES_USER: ${POSTGRES_USER:-threshold}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?defina POSTGRES_PASSWORD no arquivo .env (veja .env.example)}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - dados-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      retries: 10
+
+volumes:
+  dados-db:

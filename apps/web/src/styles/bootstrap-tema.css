@@ -1,0 +1,238 @@
+/*
+ * Tema do Bootstrap 5.3 com a identidade do Threshold.
+ *
+ * O Bootstrap é o framework da interface (grade, menu, botões, formulários, cards, modal, barra de progresso,
+ * lista e abas). Ele é configurado por variáveis CSS (--bs-*): aqui elas recebem as cores e fontes de tokens.css,
+ * então o visual de "arquivo confidencial" continua o mesmo e os componentes do Bootstrap herdam esse clima.
+ * O modo escuro do Bootstrap é ligado em index.html (data-bs-theme="dark").
+ *
+ * Ordem de carregamento (main.tsx): bootstrap.min.css → tokens.css → este arquivo → estilos do Threshold.
+ */
+
+/* ---------- Cores, fontes e bordas globais ---------- */
+:root,
+[data-bs-theme='dark'] {
+  --bs-body-bg: var(--color-bg);
+  --bs-body-bg-rgb: 15, 15, 18;
+  --bs-body-color: var(--color-text);
+  --bs-body-color-rgb: 236, 230, 216;
+  --bs-body-font-family: var(--font-sans);
+  --bs-body-font-size: 1rem;
+  --bs-body-line-height: 1.55;
+  --bs-emphasis-color: var(--color-text);
+  --bs-emphasis-color-rgb: 236, 230, 216;
+  --bs-secondary-color: var(--color-text-muted);
+  --bs-secondary-bg: var(--color-surface);
+  --bs-tertiary-bg: var(--color-surface-raised);
+  --bs-heading-color: inherit;
+  --bs-link-color: var(--color-lantern);
+  --bs-link-color-rgb: 242, 181, 68;
+  --bs-link-hover-color: #f7cd7a;
+  --bs-link-hover-color-rgb: 247, 205, 122;
+  --bs-border-color: var(--color-border);
+  --bs-border-color-translucent: rgba(236, 230, 216, 0.12);
+  --bs-border-radius: var(--radius-md);
+  --bs-border-radius-sm: var(--radius-sm);
+  --bs-primary: var(--color-lantern);
+  --bs-primary-rgb: 242, 181, 68;
+  --bs-danger: var(--color-alert);
+  --bs-danger-rgb: 255, 92, 92;
+  --bs-focus-ring-color: rgba(242, 181, 68, 0.45);
+  --bs-code-color: inherit;
+}
+
+/*
+ * O Reboot do Bootstrap muda tamanho, peso e margens de títulos, parágrafos e listas.
+ * O visual do Threshold foi desenhado sobre os padrões do navegador, então eles voltam aqui:
+ * a base é do Bootstrap, mas a tipografia continua a mesma de antes (nada de "downgrade" visual).
+ * Classes do Threshold (.display, .label...) e do Bootstrap (.mb-0...) continuam valendo por cima.
+ */
+h1, h2, h3, h4, h5, h6 { font-weight: bold; line-height: inherit; }
+h1 { font-size: 2em; margin: 0.67em 0; }
+h2 { font-size: 1.5em; margin: 0.83em 0; }
+h3 { font-size: 1.17em; margin: 1em 0; }
+h4 { font-size: 1em; margin: 1.33em 0; }
+p { margin: 1em 0; }
+ul, ol { margin: 1em 0; padding-left: 40px; }
+dl { margin: 1em 0; }
+dt { font-weight: inherit; }
+dd { margin: 0 0 0 40px; }
+/* O Reboot deixa o .lead fino (300); no Threshold o texto de abertura tem peso normal */
+.lead { font-weight: 400; }
+/* O Reboot deixa <hr> com 25% de opacidade; aqui a cor da borda já é a certa */
+hr { opacity: 1; }
+
+/* ---------- Foco: o mesmo contorno âmbar em todo o site (WCAG 2.4.7 / 2.4.11) ---------- */
+.btn:focus-visible,
+.nav-link:focus-visible,
+.list-group-item-action:focus-visible,
+.navbar-toggler:focus-visible {
+  outline: 3px solid var(--color-lantern);
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+/* ---------- Botões: duas variantes próprias, no formato das variantes do Bootstrap ---------- */
+.btn {
+  --bs-btn-font-family: var(--font-sans);
+  --bs-btn-border-radius: var(--radius-sm);
+  --bs-btn-disabled-opacity: 0.5;
+}
+/* Primário: âmbar da Lantern */
+.btn-lantern {
+  --bs-btn-color: var(--color-on-lantern);
+  --bs-btn-bg: var(--color-lantern);
+  --bs-btn-border-color: var(--color-lantern);
+  --bs-btn-hover-color: var(--color-on-lantern);
+  --bs-btn-hover-bg: #f5c463;
+  --bs-btn-hover-border-color: #f5c463;
+  --bs-btn-active-color: var(--color-on-lantern);
+  --bs-btn-active-bg: #d99e2f;
+  --bs-btn-active-border-color: #d99e2f;
+  --bs-btn-disabled-color: var(--color-on-lantern);
+  --bs-btn-disabled-bg: var(--color-lantern);
+  --bs-btn-disabled-border-color: var(--color-lantern);
+}
+/* Secundário: contorno de arquivo, que acende em âmbar */
+.btn-arquivo {
+  --bs-btn-color: var(--color-text);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: var(--color-border-strong);
+  --bs-btn-hover-color: var(--color-text);
+  --bs-btn-hover-bg: rgba(242, 181, 68, 0.06);
+  --bs-btn-hover-border-color: var(--color-lantern);
+  --bs-btn-active-color: var(--color-text);
+  --bs-btn-active-bg: rgba(242, 181, 68, 0.12);
+  --bs-btn-active-border-color: var(--color-lantern);
+  --bs-btn-disabled-color: var(--color-text-muted);
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: var(--color-border);
+}
+/* Alerta (ação que desfaz trabalho, como reiniciar a demonstração) */
+.btn-alerta {
+  --bs-btn-color: var(--color-on-lantern);
+  --bs-btn-bg: var(--color-alert);
+  --bs-btn-border-color: var(--color-alert);
+  --bs-btn-hover-color: var(--color-on-lantern);
+  --bs-btn-hover-bg: #ff7a7a;
+  --bs-btn-hover-border-color: #ff7a7a;
+  --bs-btn-active-color: var(--color-on-lantern);
+  --bs-btn-active-bg: #e64848;
+  --bs-btn-active-border-color: #e64848;
+}
+/* Grupo de opções (DOI ou ISBN): o botão marcado fica âmbar */
+.btn-check:checked + .btn-arquivo {
+  --bs-btn-active-color: var(--color-on-lantern);
+  --bs-btn-active-bg: var(--color-lantern);
+  --bs-btn-active-border-color: var(--color-lantern);
+}
+.btn-check:focus-visible + .btn {
+  outline: 3px solid var(--color-lantern);
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+/* ---------- Formulários ---------- */
+.form-control,
+.form-select {
+  --bs-border-color: var(--color-border-strong);
+}
+.form-control:focus,
+.form-select:focus {
+  color: var(--color-text);
+  border-color: var(--color-lantern);
+  box-shadow: 0 0 0 0.25rem rgba(242, 181, 68, 0.25);
+}
+.form-label {
+  font: 500 13px var(--font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.form-text { color: var(--color-text-muted); }
+.form-check-input {
+  --bs-form-check-bg: var(--color-bg);
+  border-color: var(--color-border-strong);
+}
+.form-check-input:focus {
+  border-color: var(--color-lantern);
+  box-shadow: 0 0 0 0.25rem rgba(242, 181, 68, 0.25);
+}
+.form-check-input:checked {
+  background-color: var(--color-lantern);
+  border-color: var(--color-lantern);
+}
+/* Visto escuro sobre o âmbar (o padrão do Bootstrap é branco, com pouco contraste aqui) */
+.form-check-input:checked[type='checkbox'] {
+  --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23141414' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}
+
+/* ---------- Menu (navbar) ---------- */
+.navbar.cabecalho {
+  --bs-navbar-padding-x: 0;
+  --bs-navbar-padding-y: 0;
+  --bs-navbar-color: var(--color-text-muted);
+  --bs-navbar-hover-color: var(--color-text);
+  --bs-navbar-active-color: var(--color-text);
+  --bs-navbar-nav-link-padding-x: 16px;
+  --bs-navbar-toggler-padding-x: 12px;
+  --bs-navbar-toggler-padding-y: 8px;
+  --bs-navbar-toggler-border-color: var(--color-border-strong);
+  --bs-navbar-toggler-border-radius: var(--radius-sm);
+  --bs-navbar-toggler-focus-width: 0;
+}
+
+/* ---------- Modal ---------- */
+.modal {
+  --bs-modal-bg: var(--color-surface);
+  --bs-modal-color: var(--color-text);
+  --bs-modal-border-color: var(--color-border-strong);
+  --bs-modal-border-radius: var(--radius-md);
+  --bs-modal-inner-border-radius: var(--radius-md);
+  --bs-modal-header-border-color: var(--color-border);
+  --bs-modal-footer-border-color: var(--color-border);
+  --bs-modal-padding: 24px;
+  --bs-modal-header-padding: 20px 24px;
+}
+.modal-backdrop { --bs-backdrop-opacity: 0.72; }
+.modal-title {
+  font: 700 22px/1.15 var(--font-condensed);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.modal-content { box-shadow: 0 0 0 1px rgba(242, 181, 68, 0.08), 0 24px 60px rgba(0, 0, 0, 0.6); }
+
+/* ---------- Barra de progresso ---------- */
+.progress {
+  --bs-progress-height: 10px;
+  --bs-progress-bg: var(--color-border);
+  --bs-progress-bar-bg: var(--color-lantern);
+  --bs-progress-border-radius: 2px;
+}
+
+/* ---------- Lista (list-group) ---------- */
+.list-group {
+  --bs-list-group-bg: var(--color-surface);
+  --bs-list-group-color: var(--color-text);
+  --bs-list-group-border-color: var(--color-border);
+  --bs-list-group-border-radius: var(--radius-md);
+  --bs-list-group-item-padding-x: 18px;
+  --bs-list-group-item-padding-y: 14px;
+  --bs-list-group-action-color: var(--color-text);
+  --bs-list-group-action-hover-color: var(--color-text);
+  --bs-list-group-action-hover-bg: var(--color-surface-raised);
+  --bs-list-group-action-active-color: var(--color-text);
+  --bs-list-group-action-active-bg: var(--color-surface-raised);
+}
+.list-group-item-action:hover { box-shadow: inset 3px 0 0 var(--color-lantern); }
+
+/* ---------- Abas em pílula (nav-pills) ---------- */
+.nav-pills {
+  --bs-nav-link-color: var(--color-text-soft);
+  --bs-nav-link-hover-color: var(--color-text);
+  --bs-nav-pills-border-radius: var(--radius-sm);
+  --bs-nav-pills-link-active-color: var(--color-on-lantern);
+  --bs-nav-pills-link-active-bg: var(--color-lantern);
+}
+.nav-pills .nav-link { min-height: var(--touch-target); display: inline-flex; align-items: center; border: 1px solid var(--color-border-strong); }
+.nav-pills .nav-link.active { border-color: var(--color-lantern); font-weight: 600; }

@@ -1,0 +1,36 @@
+# Dependências e builds
+node_modules/
+dist/
+dist-ssr/
+*.tsbuildinfo
+coverage/
+.cache/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# Segredos — NUNCA versionar
+.env
+.env.*
+!.env.example
+
+# Dados de pessoas reais — NUNCA versionar (respostas da validação, exportações)
+*.csv
+!analise/fixtures/FICTICIO_*.csv
+resultados/
+dados-reais/
+
+# Cypress
+apps/web/cypress/screenshots/
+apps/web/cypress/videos/
+apps/web/cypress/downloads/
+
+# Sistema e editores
+.DS_Store
+*.log
+.idea/
+.vscode/*
+!.vscode/extensions.json

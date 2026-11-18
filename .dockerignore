@@ -1,0 +1,23 @@
+# O que NUNCA entra na imagem: dependências da sua máquina, builds antigos, segredos e dados.
+**/node_modules
+**/dist
+**/.vite
+.git
+.github
+.env
+.env.*
+!.env.example
+*.csv
+resultados/
+dados-reais/
+analise/
+# data/: só a base ABNT entra (a Lantern/Archivist consulta). Nada de dados de pesquisa.
+data/*
+!data/abnt/
+data/abnt/*.py
+docs/
+scripts/
+apps/web/cypress/screenshots
+apps/web/cypress/videos
+**/*.log
+.DS_Store
